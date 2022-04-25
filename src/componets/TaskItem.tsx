@@ -4,7 +4,7 @@ import { Task } from "./Types";
 type Props = {
     task: Task
     handleDone: (task: Task) => void
-    handleDelte: (task: Task) => void
+    handleDelete: (task: Task) => void
 }
 
 const TaskItem: React.FC<Props> = ({ task, handleDone, handleDelete }) => {
@@ -14,9 +14,11 @@ const TaskItem: React.FC<Props> = ({ task, handleDone, handleDelete }) => {
                 <input className="checkbox-input" type="checkbox" onClick={() => handleDone(task)} defaultChecked={task.done} />
                 <span className="checkbox-label">{ task.title }</span>
             </label>
-            <button className="delete-btn" onClick={ () => handleDelte(task)}>
+            <button className="delete-btn" onClick={ () => handleDelete(task)}>
                 Delete
             </button>
         </li>
     )
 }
+
+export default TaskItem
