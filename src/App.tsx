@@ -18,3 +18,16 @@ const initialState: Task[] = [
   }
 ]
 
+const App:React.FC = () => {
+  const [tasks, setTasks] = useState(initialState)
+    return (
+      <div className='todo-container'>
+        <div className='todo-component'>
+          <TaskInput setTasks={setTasks} tasks={tasks} />
+          <TaskList setTasks={setTasks} tasks={tasks} />
+        </div>
+      </div>
+    );
+}
+
+export default App;
